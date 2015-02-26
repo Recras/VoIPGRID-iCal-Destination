@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <th>When</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for date, value in lookup.iteritems() %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ value }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
