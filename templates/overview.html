@@ -1,16 +1,47 @@
-<table>
-    <thead>
-        <tr>
-            <th>When</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for date, value in lookup.iteritems() %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>VoIPGRID iCal Destination</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>{{ date }}</td>
-                <td>{{ value }}</td>
+                <th>When</th>
+                <th>Value</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {% for date, value in lookup.iteritems() %}
+                <tr>
+                    <td>{{ date }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    </div><!-- /.container -->
+  </body>
+</html>
