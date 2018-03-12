@@ -44,7 +44,6 @@ def main():
 
 @app.route('/webhook/')
 def webhook():
-    refresh()
     return 'status=ACK&value=' + getToday()
 
 
