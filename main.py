@@ -6,9 +6,6 @@ from os import getenv
 from flask import Flask, render_template, request
 import requests
 
-app = Flask(__name__)
-
-
 lookup = {}
 icalurl = getenv('ICALURL')
 if not icalurl:
@@ -29,6 +26,13 @@ def refresh():
                 newlookup[date] = summary[:atIndex]
     global lookup
     lookup = newlookup
+
+def getApp():
+    app = Flask(__name__)
+    refresh()
+    return app
+
+app = getApp()
 
 def getToday():
     today = date.today()
