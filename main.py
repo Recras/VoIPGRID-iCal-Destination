@@ -9,7 +9,7 @@ import requests
 lookup = {}
 icalurl = getenv('ICALURL')
 if not icalurl:
-    print 'export ICALURL env-var'
+    print('export ICALURL env-var')
     quit()
 
 def refresh():
@@ -53,4 +53,6 @@ def webhook():
 
 if __name__ == "__main__":
     port = int(getenv('PORT',5000))
+    if getenv('DEBUG'):
+        app.debug = True
     app.run(host= '0.0.0.0', port=port)

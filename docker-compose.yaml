@@ -6,3 +6,5 @@ services:
       - DEBUG
       - PORT
       - ICALURL
+    ports:
+      - "5000:5000"
